@@ -72,7 +72,7 @@ def predict(fileName):
         letter_image = image[y : h, x : w]
 
         # Re-size the letter image to 20x20 pixels to match training data
-        # letter_image = resize_to_fit(letter_image, 20, 20)
+        letter_image = resize_to_fit(letter_image, 20, 20)
 
         # Turn the single image into a 4d list of images to make Keras happy
         letter_image = np.expand_dims(letter_image, axis=2)
