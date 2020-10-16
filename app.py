@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     if request.files:
         captcha = request.files['image']
-        return json.dumps({"result": solve_captcha(captcha)})
+        return solve_captcha(captcha)
 
 if __name__ == '__main__':
     app.run(debug=True, port=int(os.environ.get('PORT', 5000)))
